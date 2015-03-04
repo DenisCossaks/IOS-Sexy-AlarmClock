@@ -1,0 +1,30 @@
+//
+// Prefix header for all source files of the 'WakeMe' target in the 'WakeMe' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+
+#ifdef SHOrientationLandScape
+#define    			[[UIScreen mainScreen] bounds].size.height
+#define SCREEN_HEIGHT			[[UIScreen mainScreen] bounds].size.width
+#define SCALE_SCREEN_WIDTH		(SCREEN_WIDTH / 1024)
+#define SCALE_SCREEN_HEIGHT		(SCREEN_HEIGHT / 768)
+#else
+#define SCREEN_WIDTH			[[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT			[[UIScreen mainScreen] bounds].size.height
+#define SCALE_SCREEN_WIDTH		(SCREEN_WIDTH / 768)
+#define SCALE_SCREEN_HEIGHT		(SCREEN_HEIGHT / 1024)
+
+#define ADMOB_UNIT_ID @"a151bca7c4ed66c"
+
+#define REVMOB_ID @"51c214cc31f15e9068000025"
+
+#define VERSION [[[UIDevice currentDevice] systemVersion] floatValue] 
+
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height-568)?NO:YES)
+
+#endif
